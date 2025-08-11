@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Supermercati Scanner</title>
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-sky-50 min-h-screen flex flex-col items-center p-4">
+  <h1 class="text-3xl font-bold mb-4">Supermercati Scanner</h1>
+
+  <div id="supermarket-section" class="mb-6 w-full max-w-lg bg-white p-4 rounded shadow">
+    <h2 class="font-semibold mb-2">Scegli il supermercato</h2>
+    <div id="supermarket-list" class="mb-2"></div>
+    <form id="manual-supermarket-form" class="hidden">
+      <input id="manual-name" type="text" placeholder="Nome supermercato" class="border p-2 w-full mb-2 rounded" />
+      <input id="manual-city" type="text" placeholder="Città" class="border p-2 w-full mb-2 rounded" />
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Salva</button>
+    </form>
+  </div>
+
+  <button id="scan-button" class="bg-green-600 text-white text-xl font-bold px-12 py-4 rounded shadow" disabled>Scan Barcode</button>
+
+  <div id="result" class="mt-6 w-full max-w-lg bg-white p-4 rounded shadow min-h-[100px]"></div>
+
+  <script src="https://unpkg.com/@zxing/browser@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
