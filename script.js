@@ -25,7 +25,6 @@ async function getLocation() {
 }
 
 async function findSupermarkets(lat, lon) {
-  // Uso Nominatim OpenStreetMap per trovare supermercati nel raggio 500m
   const radiusMeters = 500;
   const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node(around:${radiusMeters},${lat},${lon})[shop=supermarket];out;`;
 
@@ -108,11 +107,14 @@ scanButton.addEventListener('click', async () => {
   }
 });
 
-// Creo un video element invisibile per la scansione
+// Creo un video element visibile per la scansione
 const video = document.createElement('video');
 video.setAttribute('id', 'video');
-video.style.width = '0px';
-video.style.height = '0px';
+video.style.width = '100%';
+video.style.height = 'auto';
+video.style.maxWidth = '400px';
+video.style.borderRadius = '8px';
+video.style.marginTop = '1rem';
 document.body.appendChild(video);
 
 // Avvio la geolocalizzazione all'apertura
